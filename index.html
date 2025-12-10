@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.5/css/all.min.css">
+
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Къща за гости | KAMBEROVI HOUSE</title>
+</head>
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo"> <div class="img-logo"><img src="images/ChatGPT Image Dec 10, 2025, 04_58_27 PM.png" alt=""></div> KAMBEROVI HOUSE</a>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-apps-2-fill"></i>
+      </div>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#reservation" class="nav__link btn-home">Резервирай</a></li>
+          <li><a href="#services" class="nav__link">Удобства</a></li>
+          <li><a href="#about" class="nav__link">За нас</a></li>
+          <li><a href="#prices" class="nav__link">Цени</a></li>
+          <li><a href="#gallery" class="nav__link">Галерия</a></li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-large-line"></i>
+        </div>
+      </div>
+    </nav>
+  </header> 
+
+
+  <div class="slider">
+    <div class="list">
+  
+      <div class="item active">
+        <img src="images/flowers.webp" alt="">
+        <div class="content">
+          <p>Добре дошли в Kamberovi House</p>
+          <h2>Уют в Калофер</h2>
+          <p>Насладете се на красивия двор, цветята и спокойната атмосфера около къщата.</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="images/horse-riding.jpg" alt="">
+        <div class="content">
+          <p>Преживяване сред природата</p>
+          <h2>Конна езда</h2>
+          <p>Разходки с кон по живописни маршрути край Калофер – подходящи и за начинаещи.</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="images/delicious.webp" alt="">
+        <div class="content">
+          <p>Домашен вкус</p>
+          <h2>Мезета & напитки</h2>
+          <p>Насладете се на домашни деликатеси и питие за уютни вечери с близките.</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="images/relax.webp" alt="">
+        <div class="content">
+          <p>Комфорт & релакс</p>
+          <h2>Удобни стаи</h2>
+          <p>Просторни спални с меки хавлии и всичко необходимо за пълноценна почивка.</p>
+        </div>
+      </div>
+  
+      <div class="item">
+        <img src="images/details.webp" alt="">
+        <div class="content">
+          <p>Идентичност</p>
+          <h2>Кamberovi House</h2>
+          <p>Уникални брандирани детайли, които придават характер и уют на къщата.</p>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="arrows">
+      <button id="prev"><</button>
+      <button id="next">></button>
+    </div> 
+  
+    <div class="thumbnail">
+  
+      <div class="item active">
+        <img src="images/flowers.webp" alt="">
+        <div class="content">Двор & природа</div>
+      </div>
+  
+      <div class="item">
+        <img src="images/horse-riding.jpg" alt="">
+        <div class="content">Конна езда</div>
+      </div>
+  
+      <div class="item">
+        <img src="images/delicious.webp" alt="">
+        <div class="content">Домашни вкусотии</div>
+      </div>
+  
+      <div class="item">
+        <img src="images/relax.webp" alt="">
+        <div class="content">Комфортни стаи</div>
+      </div>
+  
+      <div class="item">
+        <img src="images/details.webp" alt="">
+        <div class="content">Брандирани детайли</div>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+
+
+<div class="social-bar">
+    <a href="tel:+359XXXXXXXXX" class="social-btn call">
+      <i class="ri-phone-fill"></i>
+    </a>
+  
+    <a href="https://facebook.com/YourPage" target="_blank" class="social-btn fb">
+      <i class="ri-facebook-fill"></i>
+    </a>
+  
+    <a href="https://instagram.com/YourPage" target="_blank" class="social-btn ig">
+      <i class="ri-instagram-line"></i>
+    </a>
+  </div>
+  
+
+  <section id="reservation" class="reservation-section scroll-reveal">
+    <h2 class="reservation-title">РЕЗЕРВИРАЙ СВОЯТА ПОЧИВКА</h2>
+  
+    <form class="reservation-form">
+      <div class="form-group">
+        <label>Име и фамилия</label>
+        <input type="text" placeholder="Въведете Вашето име" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Телефон</label>
+        <input type="tel" placeholder="Пример: 0888 123 456" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="example@mail.com" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Дата на настаняване</label>
+        <input type="date" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Дата на напускане</label>
+        <input type="date" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Брой гости</label>
+        <select required>
+          <option value="">Изберете...</option>
+          <option>1 човек</option>
+          <option>2 души</option>
+          <option>3 души</option>
+          <option>4 души</option>
+          <option>5+</option>
+        </select>
+      </div>
+  
+      <div class="form-group full">
+        <label>Допълнителни бележки</label>
+        <textarea rows="4" placeholder="Добавете съобщение..."></textarea>
+      </div>
+  
+      <button type="submit" class="reserve-btn">Изпрати заявка</button>
+    </form>
+  
+    <!-- Контакти с икони -->
+    <div class="reservation-contacts">
+      <a href="tel:+359XXXXXXXXX"><i class="ri-phone-fill"></i> 0888 123 456</a>
+      <a href="mailto:mail@example.com"><i class="ri-mail-fill"></i> mail@example.com</a>
+      <a href="https://facebook.com/YourPage" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a>
+      <a href="https://instagram.com/YourPage" target="_blank"><i class="ri-instagram-line"></i> Instagram</a>
+    </div>
+
+
+    <div class="reservation-success" id="reservationSuccess">
+        <h3>Благодарим Ви!</h3>
+        <p>Ще се свържем с Вас.</p>
+      </div>
+      
+  </section>
+  
+  <section class="services" id="services"> 
+    <h1>НАШИТЕ УДОБСТВА</h1>
+    <div class="services-container">
+
+        <div class="services-grid">
+            <!-- Паркинг -->
+            <article class="service-card" data-service="pool">
+              <i class="ri-parking-box-line service-icon"></i>
+              <h3>Безплатен частен паркинг</h3>
+              <p>Безплатен частен паркинг на място – не е нужна резервация. Удобно, сигурно и непосредствено до къщата.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Вижте повече
+              </p>
+            </article>
+        
+            <!-- Кухня -->
+            <article class="service-card" data-service="bbq">
+              <i class="ri-restaurant-line service-icon"></i>
+              <h3>Напълно оборудвана кухня</h3>
+              <p>Кухня с печка, котлони, миялна, микровълнова, кафе машина, тостер и всички необходими кухненски съдове.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Вижте повече
+              </p>
+            </article>
+        
+            <!-- Спални & баня -->
+            <article class="service-card" data-service="bikes">
+              <i class="ri-hotel-bed-line service-icon"></i>
+              <h3>Комфортни спални & бани</h3>
+              <p>Уютни спални с удобно спално бельо, гардероб и модерни бани с кърпи, чехли, сешоар и душ или вана.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Вижте повече
+              </p>
+            </article> 
+        
+            <!-- Всекидневна & удобства -->
+            <article class="service-card" data-service="horses">
+              <i class="ri-sofa-line service-icon"></i>
+              <h3>Дневна зона за релакс</h3>
+              <p>Всекидневна с удобен диван, трапезария, плоскоекранен TV с кабелна и място за спокойни семейни вечери.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Вижте повече
+              </p>
+            </article>
+
+            <!-- Wi-Fi & климатик -->
+            <article class="service-card" data-service="wifi">
+              <i class="ri-wifi-line service-icon"></i>
+              <h3>Wi-Fi & климатизация</h3>
+              <p>Безплатен Wi-Fi в цялата къща, климатизация, отопление, мрежи против комари и удобства за по-дълъг престой.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Вижте повече
+              </p>
+            </article>
+        
+            <!-- Навън & гледки -->
+            <article class="service-card" data-service="views">
+              <i class="ri-landscape-line service-icon"></i>
+              <h3>Тераса, барбекю & гледка</h3>
+              <p>Тераса, балкон, двор с градина, барбекю и външен кът за хранене – с гледка към планината и зеленината.</p>
+
+              <p class="service-card__hint">
+                <i class="ri-arrow-right-circle-line"></i>
+                Натиснете за повече снимки и описание
+              </p>
+            </article>
+          </div>
+
+        
+        <!-- POP-UP МОДАЛ ЗА УДОБСТВАТА -->
+        <div class="service-modal" id="serviceModal">
+          <div class="service-modal__overlay"></div>
+          <div class="service-modal__content">
+            <button class="service-modal__close" id="serviceModalClose">
+              <i class="ri-close-line"></i>
+            </button>
+        
+            <h3 class="service-modal__title"></h3>
+        
+            <div class="service-modal__carousel">
+              <button class="service-modal__nav" id="servicePrev">&lt;</button>
+              <img src="" alt="" class="service-modal__image">
+              <button class="service-modal__nav" id="serviceNext">&gt;</button>
+            </div>
+        
+            <p class="service-modal__text"></p>
+          </div>
+</section> 
+
+
+<section id="about" class="about">
+  <div class="about__container">
+    
+    <div class="about__image">
+      <img src="images/view-from-house.jpg" alt="Къща Камберови - изглед">
+    </div>
+
+    <div class="about__content">
+      <h2 class="about__title">ЗА КЪЩА КАМБЕРОВИ</h2>
+      <p class="about__subtitle">
+        Къща Камберови в Калофер предлага уютно и удобно място за престой – самостоятелна къща за гости с една спалня, всекидневна, просторен двор и тераса, идеални за релакс сред природата.
+      </p>
+
+      <div class="about__highlights">
+        <div class="about__item">
+          <i class="ri-landscape-line"></i>
+          <p>Спокойна локация с красиви планински и градински гледки.</p>
+        </div>
+        <div class="about__item">
+          <i class="ri-home-heart-line"></i>
+          <p>Модерни удобства – климатик, бърз интернет, напълно оборудвана кухня.</p>
+        </div>
+        <div class="about__item">
+          <i class="ri-team-line"></i>
+          <p>Просторни помещения и уютна атмосфера – подходяща за семейства и двойки.</p>
+        </div>
+      </div>
+
+      <p class="about__text">
+        На разположение на гостите е напълно оборудвана кухня с хладилник, микровълнова, съдомиялна,
+        фурна, котлони, кафе машина и кухненска посуда. Всекидневната е обзаведена с удобен диван,
+        кът за хранене и плоскоекранен телевизор. Къщата разполага и с балкон, тераса и уютен озеленен двор.
+      </p>
+
+      <p class="about__text">
+        На открито ви очакват зона за хранене, градински мебели и оборудвано барбекю –
+        перфектни за вечери на чист въздух. Безплатният WiFi и климатизацията допълват комфорта за един приятен престой.
+      </p>
+    </div>
+
+  </div>
+
+
+  <section id="about" class="about">
+      <div class="about__container">
+        
+        <!-- ЛЯВО: Текст за локацията -->
+        <div class="about__content">
+          <h2 class="about__title">ЛОКАЦИЯ НА КЪЩА КАМБЕРОВИ</h2>
+          
+          <p class="about__subtitle">
+            Къща Камберови се намира в Калофер – красива и тиха местност под връх Ботев, 
+            заобиколена от планински гледки и природни забележителности.
+          </p>
+    
+          <div class="about__highlights">
+            <div class="about__item">
+              <i class="ri-map-pin-line"></i>
+              <p>На удобно място близо до природни маршрути и туристически атракции.</p>
+            </div>
+            <div class="about__item">
+              <i class="ri-road-map-line"></i>
+              <p>Пловдивското летище е на около 80 км – лесен достъп за пътуващи гости.</p>
+            </div>
+            <div class="about__item">
+              <i class="ri-tree-line"></i>
+              <p>Близо до Екопътека „Бяла река“ (6 км), връх Ботев (30 км) и извор „Момина сълза“.</p>
+            </div>
+          </div>
+    
+          <p class="about__text">
+            Районът е богат на природни и културни забележителности. На кратко разстояние се намира 
+            Музеят на розата, множество екопътеки и места за пикник. Тишината, красотата и свежият въздух 
+            правят Къща Камберови идеален избор за вашата почивка в Калофер.
+          </p>
+        </div>
+    
+        <!-- ДЯСНО: Google Maps -->
+        <div class="about__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+    
+      </div>      
+</section>
+
+<section id="prices" class="prices">
+  <div class="prices__container">
+    <h2 class="prices__title">ЦЕНИ</h2>
+    <p class="prices__subtitle">
+      Изберете най-подходящия вариант за престой в Kamberovi House.
+      Базова цена: <strong>130 € / нощувка</strong> за цялата къща (до 6 гости).
+    </p>
+
+    <div class="prices__grid">
+
+      <!-- BASIC PLAN -->
+      <article class="price-card price-card--basic">
+        <div class="price-card__ribbon">
+          <span>2 Нощувки</span>
+        </div>
+
+        <div class="price-card__header">
+          <span class="price-card__currency">€</span>
+          <span class="price-card__price">260</span>
+          <span class="price-card__period">/ общо</span>
+          <h3 class="price-card__name">КРАТЪК ПРЕСТОЙ</h3>
+        </div>
+
+        <ul class="price-card__list">
+          <li><i class="ri-check-line"></i> Цялата къща – до 6 гости</li>
+          <li><i class="ri-check-line"></i> Напълно оборудвана кухня</li>
+          <li><i class="ri-check-line"></i> Двор, тераса, барбекю</li>
+          <li class="disabled"><i class="ri-close-line"></i> Късно напускане</li>
+          <li class="disabled"><i class="ri-close-line"></i> Добре дошли напитки</li>
+        </ul>
+
+        <button class="price-card__btn" onclick="location.href='#reservation'">
+          РЕЗЕРВИРАЙ
+        </button>
+      </article>
+
+      <!-- PRO PLAN -->
+      <article class="price-card price-card--pro">
+        <div class="price-card__ribbon">
+          <span>Най–популярен</span>
+        </div>
+
+        <div class="price-card__header">
+          <span class="price-card__currency">€</span>
+          <span class="price-card__price">390</span>
+          <span class="price-card__period">/ 3 нощувки</span>
+          <h3 class="price-card__name">СЕМЕЕН УИКЕНД</h3>
+        </div>
+
+        <ul class="price-card__list">
+          <li><i class="ri-check-line"></i> До 6 гости</li>
+          <li><i class="ri-check-line"></i> Пълна кухня & барбекю</li>
+          <li><i class="ri-check-line"></i> Wi-Fi, TV, климатик</li>
+          <li><i class="ri-check-line"></i> Късно напускане* (по уговорка)</li>
+          <li class="disabled"><i class="ri-close-line"></i> Закуска включена</li>
+        </ul>
+
+        <button class="price-card__btn price-card__btn--pro" onclick="location.href='#reservation'">
+          РЕЗЕРВИРАЙ
+        </button>
+      </article>
+
+      <!-- PREMIUM PLAN -->
+      <article class="price-card price-card--premium">
+        <div class="price-card__ribbon">
+          <span>Най–добра оферта</span>
+        </div>
+
+        <div class="price-card__header">
+          <span class="price-card__currency">€</span>
+          <span class="price-card__price">780</span>
+          <span class="price-card__period">/ 6 нощувки</span>
+          <h3 class="price-card__name">ДЪЛЪГ ПРЕСТОЙ</h3>
+        </div>
+
+        <ul class="price-card__list">
+          <li><i class="ri-check-line"></i> Всичко включено – цялата къща</li>
+          <li><i class="ri-check-line"></i> Добре дошли напитки</li>
+          <li><i class="ri-check-line"></i> Късно напускане* (по уговорка)</li>
+          <li><i class="ri-check-line"></i> Подходящ за работа от разстояние</li>
+          <li><i class="ri-check-line"></i> Най-добра цена на нощувка</li>
+        </ul>
+
+        <button class="price-card__btn price-card__btn--premium" onclick="location.href='#reservation'">
+          РЕЗЕРВИРАЙ
+        </button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <script src="script.js"></script>
+  </body>
+  </html>

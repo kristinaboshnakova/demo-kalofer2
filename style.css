@@ -1,0 +1,1396 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Saira:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(166, 80%, 40%);
+  --first-color-alt: hsl(166, 78%, 38%);
+  --title-color: hsl(166, 95%, 15%);
+  --text-color: hsl(166, 12%, 40%);
+  --white-color: hsl(166, 100%, 99%);
+  --dark-color: hsl(166, 95%, 12%);
+  --body-color: hsl(166, 56%, 18%);
+  --body-white-color: hsl(0, 0%, 100%);
+  --body-first-color: hsl(166, 80%, 40%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Montserrat", serif;
+  --second-font: "Saira", serif;
+  --biggest-font-size: 4.5rem;
+  --big-font-size: 2.5rem;
+ /* --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;*/
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+ 
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 9.5rem;
+    --big-font-size: 4rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
+  line-height: 110%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s;
+  }
+  
+  .nav{
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__logo{
+    color: white;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+  }
+  
+/* ЛОГОТО В НАВБАРА */
+.nav__logo {
+  display: inline-flex;          /* снимка + текст в една линия */
+  align-items: center;           /* центрирани вертикално */
+  gap: 0.5rem;                   /* разстояние между снимка и текста */
+}
+
+/* контейнерът за снимката */
+.img-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* самата снимка в логото */
+.img-logo img {
+  height: 56px;                  /* регулирай според вкуса (30–50px) */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;            /* по желание – леки закръгления */
+}
+
+
+  .nav__logo:hover{
+    color: var(--first-color);
+  }
+  
+  .nav__toggle,
+  .nav__close{
+    display: flex;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width:1150px){
+    .nav__menu{
+      position: fixed;
+      top:-120%;
+      left:0;
+      background-color:var(--body-color);
+      width: 100%;
+      /*height: 40%;*/
+      padding-block: 4rem;
+      box-shadow: 0 8px 16px hsla(166, 85%, 8%, .3);
+      transition: top .4s;
+    }
+  }
+  
+  .nav__list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  
+  .nav__link{
+    color:var(--white-color);
+    font: var(--font-regular) 1.5rem var(--second-font);
+    line-height: 110%;
+    transition: color 4s;
+  }
+
+
+  .btn-home {
+    border: 2px solid #8B5A2B;
+    background-color: #8B5A2B; /* кафяв фон */
+    border-radius: 12px;
+    padding: 8px 16px;
+    color: #fff;              /* бял текст */
+    transition: 0.3s;
+  }
+  
+  .btn-home:hover {
+    background-color: #A66A3F; /* малко по-светъл кафяв при hover */
+    border-color: #A66A3F;
+    color: #fff;
+  }
+    
+  .nav__link:hover{
+    color: var(--first-color);
+  }
+  
+  .nav__close{
+    position: absolute;
+    top:1rem;
+    right: 1.5rem;
+  }
+  
+  /* Show menu */
+  .show-menu{
+    top:0;
+  }
+  
+  .shadow-header{
+    box-shadow: 0 4px 16px hsla(166, 85%,8%, .3);
+  }
+  
+  
+  /*=============== DESKTOP NAV ===============*/
+  @media screen and (min-width:1150px){
+    /* менюто си седи нормално в навбара */
+    .nav__menu{
+      position: static;
+      width: auto;
+      padding-block: 0;
+      box-shadow: none;
+    }
+  
+    /* линковете да са в ред, не колона */
+    .nav__list{
+      flex-direction: row;
+      column-gap: 3rem;
+      align-items: center;
+    }
+  
+    /* скриваме иконките за отваряне/затваряне на голям екран */
+    .nav__toggle,
+    .nav__close{
+      display: none;
+    }
+
+  }
+
+
+  /* ===========================
+    SLIDER (original)
+=========================== */
+.slider {
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+    min-height: 650px;
+}
+
+
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0;
+    overflow:hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%; /*100%*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /*background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );*/
+
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.45) 0%,     /* леко затъмнение долу */
+      rgba(0, 0, 0, 0.15) 35%,   /* още по-леко нагоре */
+      transparent 70%            /* плавно изчезва */
+    )
+}
+
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top:20%;
+    width: 500px;
+    max-width: 90%;
+    z-index: 1;
+    color: var(--dark-color);
+
+
+
+  
+  background: rgba(0, 0, 0, 0.25);     /* леко тъмно прозрачно */
+  backdrop-filter: blur(8px);          /* Замъглява фона отзад */
+  -webkit-backdrop-filter: blur(8px);  /* Safari */
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25); /* фин светъл бордер */
+}
+
+.slider .list .item p{
+    color:var(--body-color);
+}
+
+
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content h2{
+    font-size: 70px;
+    margin:0;
+}
+
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent{
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3){
+    animation-delay: 1.3s;
+}
+
+.arrows{
+    position: absolute;
+    top:55%;
+    right: 50px;
+    z-index: 100;
+}
+
+.arrows button{
+    background-color: var(--dark-color);
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+
+.arrows button:hover{
+    background-color: var(--body-color);
+    color:black;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap:10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+    
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .item.active{
+    filter: brightness(1.5);
+}
+
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+
+/* ===============================
+   VERTICAL SOCIAL BUTTONS
+================================*/
+.social-bar {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 99999;
+  }
+  
+  .social-btn {
+    width: 48px;
+    height: 48px;
+    background-color: var(--body-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+  }
+  
+  .social-btn:hover {
+    transform: scale(1.15);
+    color: white;
+  }
+  
+  .social-bar.hidden {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  
+  /* Цветове за отделните бутони */
+  .social-btn.call {
+    background: var(--body-color);
+  }
+  
+  .social-btn.fb {
+    background: #1877f2; /* Facebook синьо */
+  }
+  
+  .social-btn.ig {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  }
+  
+
+
+  /* ==============================
+   RESERVATION FORM SECTION
+================================*/
+.reservation-section {
+    padding: 70px 20px;
+    background: var(--body-white-color);
+    color: var(--dark-color);
+    text-align: center;
+  }
+  
+  .reservation-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--title-color);
+  }
+  
+  .reservation-form {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .reservation-form .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .form-group.full {
+    grid-column: span 2;
+  }
+  
+  .reservation-form input,
+  .reservation-form select,
+  .reservation-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    font-size: 1rem;
+  }
+  
+  .reserve-btn {
+    grid-column: span 2;
+    padding: 14px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background: var(--title-color);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .reserve-btn:hover {
+    background: var(--text-color);
+  }
+  
+  /* CONTACT LINKS */
+  .reservation-contacts {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reservation-contacts a {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+  }
+  
+  .reservation-contacts a:hover {
+    color: var(--first-color);
+  }
+  
+  /* MOBILE */
+  @media (max-width: 700px) {
+    .reservation-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .form-group.full {
+      grid-column: span 1;
+    }
+  
+    .reserve-btn {
+      grid-column: span 1;
+    }
+  }
+  
+/* === ANIMATION FOR RESERVATION SECTION ON SCROLL === */
+
+/* начално състояние – скрита, леко надолу */
+.reservation-section,
+.reservation-title,
+.reservation-form .form-group,
+.reserve-btn {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* плавен преход */
+.reservation-section,
+.reservation-title,
+.reservation-form .form-group,
+.reserve-btn {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* когато секцията стане видима при скрол */
+.reservation-section.show {
+  opacity: 1; /* фонът да не “прозира” */
+}
+
+/* заглавието “пада” първо */
+.reservation-section.show .reservation-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* полетата и бутонът – ще им даваме delay от JS */
+.reservation-section.show .reservation-form .form-group,
+.reservation-section.show .reserve-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* SUCCESS MESSAGE */
+.reservation-success {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background: var(--body-white-color);
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    animation: fadeIn 0.6s ease forwards;
+  }
+  
+  .reservation-success h3 {
+    color: var(--first-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .reservation-success p {
+    color: var(--dark-color);
+    font-size: 1rem;
+  }
+  
+  /* animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  .services {
+    background-color: var(--body-color); /* можеш да го оставиш така */
+    padding: 80px 20px;                  /* вътрешен отстъп – да стане висока секция */
+    text-align: center;
+  }
+  
+  .services h1 {
+    color: var(--white-color);           /* да изпъква заглавието */
+    font-size: 2.5rem;
+    text-align: center;
+    background-image: url("images/nature1.jpg");
+    /*background-size: cover;*/
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    -webkit-text-fill-color: transparent; 
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+    to{
+        background-position-x: -500px;
+    }
+}
+
+@media (max-width:768px){
+    h1{
+        font-size: 100px;
+    }
+}
+
+/* GRID */
+.services {
+    background-color: var(--body-color);
+    padding: 70px 20px;
+    text-align: center;
+    color: var(--white-color);
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--white-color);
+  }
+  
+  .section-subtitle {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--text-color);
+  }
+  
+  .services-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+  }
+  
+  .service-card {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+    padding: 24px 20px;
+    margin-top:12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border-color: var(--first-color);
+    background: rgba(0, 0, 0, 0.45);
+  }
+  
+  .service-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--first-color);
+  }
+  
+  .service-card h3 {
+    margin-bottom: 8px;
+    color: var(--white-color);
+  }
+  
+  .service-card p {
+    font-size: 0.95rem;
+    color: var(--white-color);
+    opacity: 0.9;
+  }
+  
+  /* ========= POP-UP МОДАЛ ========= */
+  .service-modal {
+    position: fixed;
+    inset: 0;
+    display: none; /* скрито по подразбиране */
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+  }
+  
+  .service-modal.open {
+    display: flex;
+  }
+  
+  .service-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .service-modal__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    width: 90%;
+    background: var(--body-white-color);
+    color: var(--dark-color);
+    border-radius: 18px;
+    padding: 24px 20px 26px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    animation: modalFadeIn 0.35s ease;
+  }
+  
+  .service-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--dark-color);
+  }
+  
+  .service-modal__title {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    color: var(--title-color);
+  }
+  
+  .service-modal__carousel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .service-modal__image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex: 1;
+  }
+  
+  .service-modal__nav {
+    border: none;
+    background: var(--title-color);
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 0.25s;
+  }
+  
+  .service-modal__nav:hover {
+    background: var(--first-color);
+  }
+  
+  .service-modal__text {
+    font-size: 0.98rem;
+    color: var(--text-color);
+  }
+  
+  /* Анимация за модала */
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .service-modal__carousel {
+      flex-direction: column;
+    }
+  
+    .service-modal__nav {
+      order: -1;
+    }
+  }
+  
+
+  .service-card__hint {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.8;
+    color: var(--first-color);
+    transition: 0.2s ease;
+    border: 1px solid var(--body-color);
+
+  }
+  
+  .service-card__hint i {
+    font-size: 1rem;
+  }
+  
+  /* при hover на картата – подсилваме подсказката */
+  .service-card:hover .service-card__hint {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+  
+
+  /* ==============================
+   ABOUT SECTION
+================================*/
+.about {
+    background-color: var(--body-color); /* същият фон като сайта */
+    color: var(--white-color);
+    padding: 80px 20px;
+  }
+  
+  .about__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .about__image img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    object-fit: cover;
+    width: 100%;
+    max-height: 420px;
+  }
+  
+  .about__title {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    color: var(--white-color);
+    letter-spacing: 1px;
+  }
+  
+  .about__subtitle {
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .about__highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .about__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .about__item i {
+    font-size: 1.6rem;
+    color: var(--first-color);
+    margin-top: 3px;
+  }
+  
+  .about__item p {
+    color: var(--white-color);
+    font-size: 0.98rem;
+  }
+  
+  .about__text {
+    color: var(--text-color);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  
+  /* responsive */
+  @media (max-width: 900px) {
+    .about__container {
+      grid-template-columns: 1fr;
+    }
+  
+    .about__image {
+      order: -1; /* снимката отива отгоре на мобилно */
+    }
+
+    .about__map {
+        margin-top: 20px;
+  }
+}
+
+
+.about__map {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  }
+  
+  .about__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+
+
+
+
+  
+/* ==============================
+   PRICES SECTION
+================================*/
+.prices {
+  padding: 80px 20px;
+  background: #f4f7f5; /* много светъл топъл сиво-зелен фон */
+}
+
+.prices__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prices__title {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: var(--title-color);
+}
+
+.prices__subtitle {
+  max-width: 560px;
+  margin: 0 auto 40px;
+  color: var(--text-color);
+}
+
+/* GRID */
+.prices__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* CARD – с анимация при скрол */
+.price-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+
+  /* за скрол анимацията */
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    box-shadow 0.25s ease;
+}
+
+/* Ефект при скрол (и същият при hover) */
+.price-card.is-visible,
+.price-card:hover {
+  opacity: 1;
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* HEADER с цветен „връх“ */
+.price-card__header {
+  position: relative;
+  padding: 50px 18px 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.price-card__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+  z-index: -1;
+}
+
+/* различни цветове според плана – по-меки и натурални */
+/* BASIC – светъл, “sage green” */
+.price-card--basic .price-card__header::before {
+  background: linear-gradient(135deg, #b6d3c0, #8faf96);
+}
+
+/* PRO – основното ти зелено/тюркоаз (var(--first-color)) */
+.price-card--pro .price-card__header::before {
+  background: linear-gradient(135deg, var(--first-color), #1c7a63);
+}
+
+/* PREMIUM – топъл дървесен / кафе цвят като в навигацията */
+.price-card--premium .price-card__header::before {
+  background: linear-gradient(135deg, #8b5a2b, #a66a3f);
+}
+
+/* цена */
+.price-card__currency {
+  font-size: 1.4rem;
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+.price-card__price {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+.price-card__period {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.price-card__name {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* ribbon долу */
+.price-card__ribbon {
+  position: absolute;
+  left: -48px;
+  bottom: 18px;
+  transform: rotate(-45deg);
+  background: #b6d3c0; /* същото семейство като BASIC */
+  padding: 6px 60px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #2b3a32;
+  font-weight: 600;
+}
+
+.price-card--pro .price-card__ribbon {
+  background: #1c7a63;
+  color: #fff;
+}
+
+.price-card--premium .price-card__ribbon {
+  background: #8b5a2b;
+  color: #fff;
+}
+
+/* Списък със екстри */
+.price-card__list {
+  list-style: none;
+  padding: 26px 22px 0;
+  margin: 0 0 22px;
+  text-align: left;
+}
+
+.price-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* тикче – по-спокойно зелено */
+.price-card__list li i {
+  font-size: 1.1rem;
+  color: #4f9f7a;
+}
+
+.price-card__list li.disabled {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+/* червено за “няма включено”, но по-меко */
+.price-card__list li.disabled i {
+  color: #b75b4a;
+}
+
+/* бутон – неутрално зелено по дизайн на сайта */
+.price-card__btn {
+  margin: 0 22px;
+  padding: 12px 10px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: #4f9f7a;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.25s ease;
+}
+
+.price-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* оцветени бутони за Pro / Premium */
+.price-card__btn--pro {
+  background: var(--first-color);
+  color: #fff;
+}
+
+.price-card__btn--premium {
+  background: #8b5a2b;
+  color: #fff;
+}
+
+/* ==============================
+   PRICES – RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+  .prices {
+    padding: 60px 16px;
+  }
+
+  .prices__title {
+    font-size: 2rem;
+  }
+
+  .price-card {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .price-card__ribbon {
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-card__header {
+    padding-top: 42px;
+  }
+
+  .price-card__price {
+    font-size: 2.7rem;
+  }
+}
+
+
+  /* ==============================
+   SLIDER – RESPONSIVE FIXES
+   (сложи това НАДИОЛУ в края на style.css)
+==============================*/
+
+/* Таблети и по-малки лаптопи */
+@media (max-width: 1024px) {
+  .slider {
+    height: 85vh;
+    min-height: 520px;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 2.6rem;
+  }
+
+  .slider .list .item .content p {
+    font-size: 0.95rem;
+  }
+
+  .arrows {
+    top: 50%;
+    right: 20px;
+  }
+
+  .arrows button {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+
+  .thumbnail {
+    bottom: 20px;
+    height: 180px;
+    padding: 0 20px;
+  }
+
+  .thumbnail .item {
+    width: 120px;
+    height: 150px;
+  }
+}
+
+/* Телефони (портрет) */
+@media (max-width: 768px) {
+  .slider {
+    margin-top: 0;          /* премахва -50px при малки екрани */
+    height: 75vh;
+    min-height: 430px;
+  }
+
+  .slider .list .item .content {
+    left: 50%;
+    top: 18%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    width: 90%;
+    text-align: center;
+    padding: 16px 18px;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 2rem;
+  }
+
+  .slider .list .item .content p:nth-child(1) {
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+  }
+
+  .slider .list .item .content p:nth-child(3) {
+    font-size: 0.85rem;
+  }
+
+  /* Преместваме стрелките по-надолу и ги събираме */
+  .arrows {
+    top: auto;
+    bottom: 145px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .arrows button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  /* Омаляваме thumbnail-ите да не настъпват всичко */
+  .thumbnail {
+    bottom: 10px;
+    height: 120px;
+    padding: 0 10px;
+  }
+
+  .thumbnail .item {
+    width: 90px;
+    height: 110px;
+  }
+
+  .thumbnail .item .content {
+    font-size: 0.7rem;
+  }
+}
+
+/* Много малки телефони */
+@media (max-width: 480px) {
+  .slider {
+    height: 70vh;
+    min-height: 380px;
+  }
+
+  .slider .list .item .content {
+    top: 16%;
+    padding: 12px 14px;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 1.7rem;
+  }
+
+  .slider .list .item .content p:nth-child(1) {
+    letter-spacing: 3px;
+  }
+
+  .thumbnail {
+    height: 100px;
+  }
+
+  .thumbnail .item {
+    width: 80px;
+    height: 95px;
+  }
+}
+
+/* Леко оправяне на social bar, за да не пречи на слайдера на малки екрани */
+@media (max-width: 576px) {
+  .social-bar {
+    left: 10px;
+    gap: 8px;
+  }
+
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  }
+}
+
+
+/* ===== МОБИЛНИ УСТРОЙСТВА – ДА СЕ ВИЖДА МАЛКО ОТ "РЕЗЕРВИРАЙ" ПОД СЛАЙДЕРА ===== */
+@media screen and (max-width: 430px) {
+  /* правим слайдера малко по-нисък от целия екран */
+  .slider {
+    height: calc(100vh - 80px); /* играй с 60–100px според вкуса */
+    min-height: 520px;          /* по-ниско, за да не „надува“ на по-малки екрани */
+  }
+
+  /* за всеки случай – да няма излишни разстояния преди reservation секцията */
+  .reservation-section {
+    margin-top: 0;
+  }
+}
